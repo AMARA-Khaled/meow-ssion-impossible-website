@@ -278,7 +278,7 @@ export default function HomePage() {
                   <li>Processeur: Intel Core i3</li>
                   <li>Mémoire: 4 GB RAM</li>
                   <li>Graphiques: Compatible DirectX 10</li>
-                  <li>Stockage: 10 MB d'espace disponible</li>
+                  <li>Stockage: 100 MB d'espace disponible</li>
                 </ul>
               </div>
               <div>
@@ -288,7 +288,7 @@ export default function HomePage() {
                   <li>Processeur: Intel Core i5</li>
                   <li>Mémoire: 8 GB RAM</li>
                   <li>Graphiques: Compatible DirectX 11</li>
-                  <li>Stockage: 10 MB d'espace disponible</li>
+                  <li>Stockage: 100 MB d'espace disponible</li>
                 </ul>
               </div>
             </div>
