@@ -2,19 +2,21 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Download, GamepadIcon as GameController } from "lucide-react"
+import { useState } from "react"
+import { Download, Menu, X } from "lucide-react"
 import UnityFeatures from "@/components/unity-features"
 
 export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/Meow-ssion Impossible.zip'; // file in public folder
-    link.download = 'Meow-ssion Impossible.zip';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+    const link = document.createElement("a")
+    link.href = "/Meow-ssion Impossible.zip" // file in public folder
+    link.download = "Meow-ssion Impossible.zip"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0e1f] text-white">
@@ -22,24 +24,35 @@ export default function HomePage() {
       <header className="container mx-auto py-6 px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-5">
-
-            <img src= "/images/nyan_cat.png" alt="chat" className=" inset-0 object-cover h-12 w-12" />
+            <img src="/images/nyan_cat.png" alt="chat" className=" inset-0 object-cover h-12 w-12" />
             <h1 className="text-xl font-bold">Meow-ssion Impossible</h1>
           </div>
           <nav>
-            <ul className="flex gap-6">
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-white"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
+            <ul
+              className={`${mobileMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row absolute md:relative left-0 right-0 top-16 md:top-0 bg-[#0a0e1f] md:bg-transparent p-4 md:p-0 gap-6 z-20 md:z-auto`}
+            >
               <li>
-                <a href="#about" className="hover:text-blue-400 transition-colors">
+                <a href="#about" className="hover:text-blue-400 transition-colors block py-2 md:py-0">
                   À Propos
                 </a>
               </li>
               <li>
-                <a href="#characters" className="hover:text-blue-400 transition-colors">
+                <a href="#characters" className="hover:text-blue-400 transition-colors block py-2 md:py-0">
                   Personnages
                 </a>
               </li>
               <li>
-                <a href="#download" className="hover:text-blue-400 transition-colors">
+                <a href="#download" className="hover:text-blue-400 transition-colors block py-2 md:py-0">
                   Télécharger
                 </a>
               </li>
@@ -49,21 +62,21 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section with New Background */}
-      <section className="relative h-[600px] overflow-hidden">
+      <section className="relative h-[400px] md:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/night-sky-background.png" alt="Ciel nocturne" fill className="object-cover" priority />
         </div>
         <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
               <span className="text-blue-400">Meow-ssion</span> Impossible
             </h1>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
               Un tireur d'élite. Un chat kidnappé. Une mission de sauvetage épique.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Button onClick={handleDownload} size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Download className="mr-2 h-4 w-4" /> Télécharger Maintenant
+                <Download className="mr-2 h-4 w-4" /> Télécharger
               </Button>
               <Button
                 variant="outline"
@@ -211,11 +224,11 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-4">Prêt à Sauver Okşu?</h2>
           <p className="text-gray-300 mb-8">Téléchargez le jeu maintenant et commencez votre mission de sauvetage!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={handleDownload} size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Download className="mr-2 h-4 w-4" /> Télécharger pour Windows
+            <Button onClick={handleDownload} size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+              <Download className="mr-2 h-4 w-4" /> Windows
             </Button>
-            <Button onClick={handleDownload} size="lg" className="bg-indigo-600 hover:bg-indigo-700">
-              <Download className="mr-2 h-4 w-4" /> Télécharger pour Mac
+            <Button onClick={handleDownload} size="lg" className="bg-indigo-600 hover:bg-indigo-700 w-full sm:w-auto">
+              <Download className="mr-2 h-4 w-4" /> Mac
             </Button>
           </div>
           <p className="text-sm text-gray-400 mt-4">Version 1.0.0 | 35MB</p>
