@@ -7,9 +7,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Game Download Page",
+  title: "Meow-ssion Impossible Download",
   description: "Download our exciting pixel art adventure game",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+  icons: {
+    icon: '/favicon.ico', // This adds the favicon
+  },
 }
 
 export default function RootLayout({
