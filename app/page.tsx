@@ -284,7 +284,7 @@ export default function HomePage() {
               <div>
                 <h4 className="font-semibold text-white mb-2">Recommandée:</h4>
                 <ul className="space-y-1 text-gray-300">
-                  <li>OS: Windows 10</li>
+                  <li>OS: Windows 11</li>
                   <li>Processeur: Intel Core i5</li>
                   <li>Mémoire: 8 GB RAM</li>
                   <li>Graphiques: Compatible DirectX 11</li>
