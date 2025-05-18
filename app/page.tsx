@@ -274,9 +274,9 @@ export default function HomePage() {
               <div>
                 <h4 className="font-semibold text-white mb-2">Minimale:</h4>
                 <ul className="space-y-1 text-gray-300">
-                  <li>OS: Windows 7 ou plus récent</li>
+                  <li>OS: Windows 10 ou plus récent</li>
                   <li>Processeur: Intel Core i3</li>
-                  <li>Mémoire: 4 GB RAM</li>
+                  <li>Mémoire: 8 GB RAM</li>
                   <li>Graphiques: Compatible DirectX 10</li>
                   <li>Stockage: 100 MB d'espace disponible</li>
                 </ul>
