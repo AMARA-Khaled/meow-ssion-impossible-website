@@ -133,9 +133,9 @@ export default function HomePage() {
             <div className="w-full md:w-2/3">
               <h4 className="text-xl font-semibold mb-3">Okşu</h4>
               <p className="text-gray-300 mb-4">
-                Okşu est une petite chatte maligne et courageuse, avec de grands yeux malicieux et un instinct de survie
-                étonnant. Agile comme l'ombre, elle s'échappe des griffes des voleurs et laisse des traces pour guider
-                Yusuf. Douce, futée, mais jamais en détresse — elle attend son héros, la queue en panache et le cœur
+                Okşu est un petit chat malin et courageux avec de grands yeux malicieux et un instinct de survie
+                étonnant. Agile comme l'ombre, il s'échappe des griffes des voleurs et laisse des traces pour guider
+                Yusuf. Doux, futé, mais jamais en détresse — il attend son héros, la queue en panache et le cœur
                 vaillant.
               </p>
             </div>
